@@ -1,0 +1,99 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/blob/3b8af6f5ffd38d10081348c16e963c3988b73668/icons/obj/hydroponics/growing.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "example_1",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "example_2",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "example_3",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },		
+        {
+            "name": "example_4",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },		
+        {
+            "name": "example_5",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },		
+        {
+            "name": "example_6",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "example_harvestable",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "example_dead",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        }	
+    ]
+}

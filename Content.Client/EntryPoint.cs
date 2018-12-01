@@ -63,6 +63,19 @@ namespace Content.Client
             factory.RegisterIgnore("Smes");
 
             prototypes.RegisterIgnore("material");
+
+            //Hydro
+            prototypes.RegisterIgnore("PlantGrowth");
+            factory.RegisterIgnore("Plant");
+            factory.RegisterIgnore("PlantHolder");
+            factory.RegisterIgnore("SeedPacket");
+            factory.RegisterIgnore("HydroponicsTray");
+
+            //TEMPORARY Hydro
+            factory.RegisterIgnore("Weedkiller");
+            factory.RegisterIgnore("Pestkiller");
+            factory.RegisterIgnore("WaterBucket");
+            factory.RegisterIgnore("Nutrients");
         }
     }
 }

@@ -1,0 +1,118 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/blob/ef64f77acb701aa473570530039f6b8df8ec953c/icons/obj/hydroponics/equipment.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+	    {
+            "name": "blank",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "tray",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        },
+        {
+            "name": "alert-lowhealth",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
+                ]
+            ]
+        },
+        {
+            "name": "alert-lowwater",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
+                ]
+            ]
+        },		
+        {
+            "name": "alert-lownutrients",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
+                ]
+            ]
+        },		
+        {
+            "name": "alert-harvestable",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
+                ]
+            ]
+        },		
+        {
+            "name": "alert-pestsortoxins",
+            "select": [],
+            "flags": {},
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
+                ]
+            ]
+        }		
+    ]
+}

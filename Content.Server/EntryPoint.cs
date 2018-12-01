@@ -28,6 +28,7 @@ using Content.Server.GameObjects.Components.Weapon.Melee;
 using Content.Server.GameObjects.Components.Materials;
 using Content.Server.GameObjects.Components.Stack;
 using Content.Server.GameObjects.Components.Construction;
+using Content.Server.GameObjects.Components.Hydroponics;
 
 namespace Content.Server
 {
@@ -102,6 +103,18 @@ namespace Content.Server
             factory.Register<ConstructionComponent>();
             factory.Register<ConstructorComponent>();
             factory.RegisterIgnore("ConstructionGhost");
+
+            //Hydro
+            factory.Register<PlantComponent>();
+            factory.Register<PlantHolderComponent>();
+            factory.Register<SeedPacketComponent>();
+            factory.Register<HydroponicsTrayComponent>();
+
+            //TEMPORARY Hydro
+            factory.Register<WeedkillerComponent>();
+            factory.Register<PestkillerComponent>();
+            factory.Register<WaterBucketComponent>();
+            factory.Register<NutrientsComponent>();
         }
 
         /// <inheritdoc />

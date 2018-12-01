@@ -1,0 +1,43 @@
+
+
+- type: PlantGrowth
+  id: ExamplePlantGrowth
+  death:
+    name: "dead example plant"
+    icon:
+       sprite: "Objects/plants.rsi"
+       state: "example_dead"
+  stages:
+  - name: "young example plant"
+    icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_1"
+  - icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_2"
+    age: 20
+  - name: "adolescent example plant"
+    icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_3"
+    age: 30
+  - icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_4"
+    age: 40
+  - name: "mature example plant"
+    icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_5"
+    age: 50
+  - icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_6"
+    age: 60
+  - name: "ripe example plant"
+    icon:
+      sprite: "Objects/plants.rsi"
+      state: "example_harvestable"
+    age: 70
+    harvestable: true
+    

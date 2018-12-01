@@ -1,0 +1,77 @@
+- type: entity
+  id: HydroponicsTray
+  name: "Hydroponics Tray"
+  description: Grow food, grow weed, grow a person, grow a gun!
+  components:
+  - type: HydroponicsTray
+  - type: PowerDevice
+    drawtype: Both
+    load: 100
+    priority: High
+  - type: Clickable
+  - type: BoundingBox
+  - type: Sprite
+    netsync: false
+    texture: ""
+    sprite: "Buildings/hydroponicstray.rsi"
+    state: tray
+    scale: 2, 2
+  - type: Appearance
+    visuals:
+    - type: HydroponicsTrayVisualizer2D
+
+
+- type: entity
+  id: SeedPacket
+  name: "Seed Packet"
+  parent: BaseItem
+  components:
+  - type: SeedPacket
+    grows: ExamplePlantGrowth
+  - type: Sprite
+    texture: "Objects/seedpacket.png"
+    scale: 2, 2
+  
+  
+- type: entity
+  id: Weedkiller
+  name: "Weed Killer"
+  parent: BaseItem
+  components:
+  - type: Weedkiller
+  - type: Sprite
+    texture: "Objects/weedkiller.png"
+    scale: 2, 2
+
+    
+- type: entity
+  id: Pestkiller
+  name: "Pest Killer"
+  parent: BaseItem
+  components:
+  - type: Pestkiller
+  - type: Sprite
+    texture: "Objects/pestkiller.png"
+    scale: 2, 2
+
+    
+- type: entity
+  id: WaterBucket
+  name: "Water Bucket"
+  parent: BaseItem
+  components:
+  - type: WaterBucket
+  - type: Sprite
+    texture: "Objects/bucket.png"
+    scale: 2, 2
+
+    
+- type: entity
+  id: Nutrients
+  name: "Nutrients Bottle"
+  parent: BaseItem
+  components:
+  - type: Nutrients
+  - type: Sprite
+    texture: "Objects/nutrients.png"
+    scale: 2, 2
