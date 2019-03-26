@@ -1,4 +1,5 @@
 ﻿using Content.Server.Mobs;
+using Content.Server.Players.Preferences;
 using SS14.Server.Interfaces.Player;
 using SS14.Shared.IoC;
 using SS14.Shared.Network;
@@ -17,6 +18,13 @@ namespace Content.Server.Players
         /// </summary>
         [ViewVariables]
         public NetSessionId SessionId { get; }
+
+        /// <summary>
+        ///     The preferences of the player owning this data.
+        ///     
+        /// </summary>
+        [ViewVariables]
+        public PlayerPrefs Prefs { get; set; }
 
         /// <summary>
         ///     The currently occupied mind of the player owning this data.
