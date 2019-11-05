@@ -61,12 +61,7 @@ namespace Content.Shared.Players.Appearance
 
         #region Type Serializer
 
-        static HumanoidCharacterAppearance()
-        {
-            YamlObjectSerializer.RegisterTypeSerializer(typeof(HumanoidCharacterAppearance), new HumanoidCharacterAppearanceTypeSerializer());
-        }
-
-        class HumanoidCharacterAppearanceTypeSerializer : YamlObjectSerializer.TypeSerializer
+        public class TypeSerializer : YamlObjectSerializer.TypeSerializer
         {
             public override object NodeToType(Type type, YamlNode node, YamlObjectSerializer serializer)
             {

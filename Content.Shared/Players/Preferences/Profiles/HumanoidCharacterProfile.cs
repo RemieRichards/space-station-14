@@ -42,19 +42,17 @@ namespace Content.Shared.Players.Preferences.Profiles
 
         public YamlNode ToYamlNode()
         {
-            return YamlObjectSerializer.TypeSerializers[typeof(HumanoidCharacterProfile)].TypeToNode(this, YamlObjectSerializer.NewWriter(new YamlMappingNode()));
+            return YamlObjectSerializer
+                .TypeSerializers[typeof(HumanoidCharacterProfile)]
+                .TypeToNode(this, YamlObjectSerializer.NewWriter(new YamlMappingNode()));
         }
+
 
         #endregion
 
         #region Type Serializer
 
-        static HumanoidCharacterProfile()
-        {
-            YamlObjectSerializer.RegisterTypeSerializer(typeof(HumanoidCharacterProfile), new HumanoidCharacterProfileTypeSerializer());
-        }
-
-        class HumanoidCharacterProfileTypeSerializer : YamlObjectSerializer.TypeSerializer
+        public class TypeSerializer : YamlObjectSerializer.TypeSerializer
         {
             public override object NodeToType(Type type, YamlNode node, YamlObjectSerializer serializer)
             {

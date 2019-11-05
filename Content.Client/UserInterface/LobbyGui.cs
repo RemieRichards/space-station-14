@@ -1,3 +1,4 @@
+﻿using Content.Client.UserInterface.Players.Preferences;
 using SS14.Client.UserInterface;
 using SS14.Client.UserInterface.Controls;
 using SS14.Client.UserInterface.CustomControls;
@@ -30,6 +31,10 @@ namespace Content.Client.UserInterface
             Chat = new Chatbox();
             chatContainer.AddChild(Chat);
             Chat.SizeFlagsVertical = SizeFlags.FillExpand;
+
+            var prefs = new PreferencesGui();
+            AddChild(prefs);
+
         }
     }
 }

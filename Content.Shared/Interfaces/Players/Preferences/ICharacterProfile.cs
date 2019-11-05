@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Interfaces.Players.Appearance;
 using SS14.Shared.Interfaces.Serialization;
+using SS14.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
 namespace Content.Shared.Interfaces.Players.Preferences

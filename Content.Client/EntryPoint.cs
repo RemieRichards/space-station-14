@@ -31,6 +31,11 @@ using Content.Shared.GameObjects.Components.Markers;
 using Content.Shared.GameObjects.Components.Mobs;
 using SS14.Client.Interfaces.UserInterface;
 using SS14.Shared.Log;
+using Content.Client.Players.Preferences;
+using SS14.Shared.Serialization;
+using Content.Server.Players.Preferences;
+using Content.Shared.Players.Preferences.Profiles;
+using Content.Shared.Players.Appearance;
 
 namespace Content.Client
 {
@@ -109,6 +114,7 @@ namespace Content.Client
             IoCManager.Register<ISharedNotifyManager, ClientNotifyManager>();
             IoCManager.Register<IClientGameTicker, ClientGameTicker>();
             IoCManager.Register<IParallaxManager, ParallaxManager>();
+            IoCManager.Register<IClientPlayerPrefsManager, ClientPlayerPrefsManager>();
             IoCManager.BuildGraph();
 
             IoCManager.Resolve<IParallaxManager>().LoadParallax();
@@ -117,6 +123,8 @@ namespace Content.Client
             var stylesheet = new NanoStyle();
 
             IoCManager.Resolve<IUserInterfaceManager>().Stylesheet = stylesheet.Stylesheet;
+
+            RegisterTypeSerializers();
         }
 
         /// <summary>
@@ -129,6 +137,11 @@ namespace Content.Client
             IoCManager.Resolve<IPlayerManager>().LocalPlayer.EntityAttached += AttachPlayerToEntity;
             IoCManager.Resolve<IPlayerManager>().LocalPlayer.EntityDetached += DetachPlayerFromEntity;
             AttachPlayerToEntity(IoCManager.Resolve<IPlayerManager>().LocalPlayer, EventArgs.Empty);
+
+
+            var prefsman = IoCManager.Resolve<IClientPlayerPrefsManager>();
+            prefsman.Get();
+            prefsman.Save();
         }
 
         /// <summary>
@@ -180,6 +193,18 @@ namespace Content.Client
                     IoCManager.Resolve<IClientGameTicker>().FrameUpdate(renderFrameEventArgs);
                     break;
             }
+        }
+
+        /// <summary>
+        ///     Register your type serializers here, so they're registered in time to be used.
+        /// </summary>
+        public void RegisterTypeSerializers()
+        {
+            //Player Prefs
+            YamlObjectSerializer.RegisterTypeSerializer(typeof(PlayerPrefs),                 new PlayerPrefs.TypeSerializer());
+            YamlObjectSerializer.RegisterTypeSerializer(typeof(HumanoidCharacterProfile),    new HumanoidCharacterProfile.TypeSerializer());
+            YamlObjectSerializer.RegisterTypeSerializer(typeof(HumanoidCharacterAppearance), new HumanoidCharacterAppearance.TypeSerializer());
+            //Player Prefs
         }
     }
 }

@@ -99,10 +99,12 @@
     <Compile Include="Interfaces\IClientGameTicker.cs" />
     <Compile Include="Interfaces\IClientNotifyManager.cs" />
     <Compile Include="ClientNotifyManager.cs" />
+    <Compile Include="Interfaces\IClientPlayerPrefsManager.cs" />
     <Compile Include="Interfaces\Parallax\IParallaxManager.cs" />
     <Compile Include="Parallax\ParallaxGenerator.cs" />
     <Compile Include="Parallax\ParallaxManager.cs" />
     <Compile Include="Parallax\ParallaxOverlay.cs" />
+    <Compile Include="Players\Preferences\ClientPlayerPrefsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameObjects\Components\Items\ClientHandsComponent.cs" />
     <Compile Include="Interfaces\GameObjects\Components\Items\IHandsComponent.cs" />
@@ -110,6 +112,12 @@
     <Compile Include="GameObjects\Components\Power\PowerDebugTool.cs" />
     <Compile Include="UserInterface\LobbyGui.cs" />
     <Compile Include="UserInterface\NanoStyle.cs" />
+    <Compile Include="UserInterface\Players\Preferences\Pages\CharactersPage.cs" />
+    <Compile Include="UserInterface\Players\Preferences\Pages\NotImplementedPage.cs" />
+    <Compile Include="UserInterface\Players\Preferences\Pages\PreferencesPage.cs" />
+    <Compile Include="UserInterface\Players\Preferences\PreferencesGui.cs" />
+    <Compile Include="UserInterface\Players\Preferences\Pages\BasePreferencesPage.cs" />
+    <Compile Include="UserInterface\Players\Preferences\Pages\JobsPage.cs" />
     <Compile Include="Utility\ResourceCacheExtensions.cs" />
     <Compile Include="GameObjects\Components\Mobs\SpeciesVisualizer2D.cs" />
   </ItemGroup>

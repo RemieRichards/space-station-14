@@ -46,6 +46,10 @@ using Content.Shared.Interfaces;
 using SS14.Server.Interfaces.ServerStatus;
 using SS14.Shared.Timing;
 using Content.Server.GameObjects.Components.Destructible;
+using SS14.Shared.Serialization;
+using Content.Server.Players.Preferences;
+using Content.Shared.Players.Preferences.Profiles;
+using Content.Shared.Players.Appearance;
 
 namespace Content.Server
 {
@@ -147,6 +151,8 @@ namespace Content.Server
             var playerManager = IoCManager.Resolve<IPlayerManager>();
 
             _statusShell = new StatusShell();
+
+            RegisterTypeSerializers();
         }
 
         public override void PostInit()
@@ -161,6 +167,18 @@ namespace Content.Server
             base.Update(level, frameTime);
 
             _gameTicker.Update(new FrameEventArgs(frameTime));
+        }
+
+        /// <summary>
+        ///     Register your type serializers here, so they're registered in time to be used.
+        /// </summary>
+        public void RegisterTypeSerializers()
+        {
+            //Player Prefs
+            YamlObjectSerializer.RegisterTypeSerializer(typeof(PlayerPrefs), new PlayerPrefs.TypeSerializer());
+            YamlObjectSerializer.RegisterTypeSerializer(typeof(HumanoidCharacterProfile), new HumanoidCharacterProfile.TypeSerializer());
+            YamlObjectSerializer.RegisterTypeSerializer(typeof(HumanoidCharacterAppearance), new HumanoidCharacterAppearance.TypeSerializer());
+            //Player Prefs
         }
     }
 }

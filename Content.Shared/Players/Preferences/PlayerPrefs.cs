@@ -3,6 +3,7 @@ using SS14.Shared.Interfaces.Reflection;
 using SS14.Shared.IoC;
 using SS14.Shared.Serialization;
 using SS14.Shared.Utility;
+using SS14.Shared.ViewVariables;
 using System;
 using System.Collections.Generic;
 using YamlDotNet.RepresentationModel;
@@ -14,22 +15,22 @@ namespace Content.Server.Players.Preferences
     /// </summary>
     public sealed class PlayerPrefs
     {
+        #region Actual Preferences
+
         /// <summary>
         ///     What Characters this player has.
         ///     Urist McRobust, Joe Genero, etc.
         /// </summary>
-        public List<ICharacterProfile> Characters { get; set; }
+        [ViewVariables]
+        public List<ICharacterProfile> Characters { get; set; } = new List<ICharacterProfile>();
 
         //TODO: more preferences!
 
+        #endregion
+
         #region Type Serializer
 
-        static PlayerPrefs()
-        {
-            YamlObjectSerializer.RegisterTypeSerializer(typeof(PlayerPrefs), new PlayerPrefsTypeSerializer());
-        }
-
-        class PlayerPrefsTypeSerializer : YamlObjectSerializer.TypeSerializer
+        public class TypeSerializer : YamlObjectSerializer.TypeSerializer
         {
             public override object NodeToType(Type type, YamlNode node, YamlObjectSerializer serializer)
             {
@@ -63,7 +64,9 @@ namespace Content.Server.Players.Preferences
                     charactersSeq.Add(characterProf.ToYamlNode());
                 }
 
-                return new YamlMappingNode {
+                return new YamlMappingNode
+                {
+                    { new YamlScalarNode("type"), new YamlScalarNode(nameof(PlayerPrefs)) },
                     { new YamlScalarNode("characters"), charactersSeq }
                 };
             }
